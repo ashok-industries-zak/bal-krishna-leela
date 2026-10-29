@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#140a24">
+<meta name="description" content="Bal Krishna Leela - a 2D platformer where young Krishna frees the asuras of Gokul.">
+<title>Bal Krishna Leela · बाल कृष्ण लीला</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="wrap">
+  <canvas id="game" width="480" height="272"></canvas>
+  <div id="touch">
+    <div class="tgroup left">
+      <button class="tb" data-k="left" aria-label="Left">◀</button>
+      <button class="tb" data-k="down" aria-label="Down">▼</button>
+      <button class="tb" data-k="right" aria-label="Right">▶</button>
+    </div>
+    <div class="tgroup right">
+      <button class="tb small" data-k="flute" aria-label="Flute">♫</button>
+      <button class="tb" data-k="throw" aria-label="Throw marble">●</button>
+      <button class="tb" data-k="jump" aria-label="Jump">▲</button>
+    </div>
+  </div>
+  <button id="pauseBtn" aria-label="Pause">II</button>
+  <div id="overlay" class="hidden"></div>
+  <div id="rotate">Rotate your phone for the best experience ⟳</div>
+</div>
+<script src="js/text.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/art.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

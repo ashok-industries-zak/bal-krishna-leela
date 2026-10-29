@@ -1,0 +1,58 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;background:#0d0716;overflow:hidden;touch-action:none;
+  -webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;
+  font-family:"Nirmala UI","Noto Sans Devanagari","Kohinoor Devanagari","Mangal","Segoe UI",system-ui,sans-serif}
+#wrap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);--s:2;overflow:hidden;
+  box-shadow:0 0 40px rgba(255,190,80,.15)}
+#game{display:block;width:100%;height:100%;image-rendering:pixelated;image-rendering:crisp-edges}
+
+#overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(ellipse at center,rgba(40,16,70,.72),rgba(8,3,18,.93));
+  color:#fff4d6;text-align:center;padding:calc(var(--s)*8px);overflow-y:auto}
+#overlay.hidden{display:none}
+.panel{max-width:calc(var(--s)*400px);width:100%}
+.panel h1{font-size:calc(var(--s)*26px);color:#ffd45e;line-height:1.05;
+  text-shadow:0 calc(var(--s)*2px) 0 #8a3b0c,0 0 calc(var(--s)*12px) rgba(255,180,60,.6)}
+.panel h1 .hi{display:block;font-size:.62em;color:#ffe9a8;margin-top:calc(var(--s)*3px)}
+.panel h2{font-size:calc(var(--s)*15px);color:#ffd45e;margin-bottom:calc(var(--s)*5px);text-shadow:0 2px 0 #6b2c08}
+.panel h2 .hi{font-size:.8em;color:#ffe9a8;margin-left:.4em}
+.sub{font-size:calc(var(--s)*9px);color:#ffcf8a;margin:calc(var(--s)*4px) 0 calc(var(--s)*9px);letter-spacing:.04em}
+.sub .hi,.story .hi,.small .hi{display:block}
+.story{font-size:calc(var(--s)*8.6px);line-height:1.5;margin:0 auto calc(var(--s)*9px);max-width:calc(var(--s)*340px);color:#fff1d0}
+.story .hi{margin-top:calc(var(--s)*4px);color:#ffe2a6}
+.small{font-size:calc(var(--s)*7px);color:#d9c6a5;margin-top:calc(var(--s)*7px)}
+.btns{display:flex;flex-wrap:wrap;justify-content:center;gap:calc(var(--s)*4px)}
+button.menu{font-family:inherit;font-weight:700;font-size:calc(var(--s)*8.5px);
+  padding:calc(var(--s)*4px) calc(var(--s)*10px);min-width:calc(var(--s)*110px);
+  background:linear-gradient(#ffd96a,#e8952c);color:#3a1b05;cursor:pointer;
+  border:calc(var(--s)*1px) solid #fff1b8;border-radius:calc(var(--s)*6px);
+  box-shadow:0 calc(var(--s)*2px) 0 #8a4310}
+button.menu.alt{background:linear-gradient(#7b5ab8,#4d3283);color:#fff2d6;border-color:#c9b1ff;box-shadow:0 calc(var(--s)*2px) 0 #2a1850}
+button.menu:focus-visible,button.menu:hover{outline:calc(var(--s)*1px) solid #fff;filter:brightness(1.1)}
+button.menu:disabled{filter:grayscale(1) brightness(.6);cursor:default}
+button.menu .hi{font-weight:600;opacity:.85}
+.chapters{display:flex;gap:calc(var(--s)*6px);justify-content:center;margin-bottom:calc(var(--s)*8px);flex-wrap:wrap}
+.chap{min-width:calc(var(--s)*105px);padding:calc(var(--s)*6px)}
+.chap b{display:block;font-size:1.2em}
+.keys{display:grid;grid-template-columns:auto auto;gap:calc(var(--s)*2px) calc(var(--s)*10px);
+  font-size:calc(var(--s)*7.5px);text-align:left;margin:0 auto calc(var(--s)*8px);max-width:calc(var(--s)*360px)}
+.keys span:nth-child(odd){color:#ffd45e;font-weight:700;white-space:nowrap}
+.stat{font-size:calc(var(--s)*10px);color:#ffd45e;margin-bottom:calc(var(--s)*8px)}
+
+#touch{position:absolute;inset:0;pointer-events:none;display:none}
+#touch.on{display:block}
+.tgroup{position:absolute;bottom:calc(var(--s)*6px);display:flex;align-items:flex-end;gap:calc(var(--s)*5px);pointer-events:auto}
+.tgroup.left{left:calc(var(--s)*6px)}
+.tgroup.right{right:calc(var(--s)*6px)}
+.tb{width:calc(var(--s)*38px);height:calc(var(--s)*38px);border-radius:50%;
+  background:rgba(255,230,160,.16);border:2px solid rgba(255,230,160,.5);color:#fff3cf;
+  font-size:calc(var(--s)*14px);touch-action:none;font-family:inherit}
+.tb.small{width:calc(var(--s)*30px);height:calc(var(--s)*30px);font-size:calc(var(--s)*12px);margin-bottom:calc(var(--s)*20px)}
+.tb.active{background:rgba(255,210,90,.5)}
+#pauseBtn{position:absolute;top:calc(var(--s)*4px);right:calc(var(--s)*4px);width:calc(var(--s)*20px);height:calc(var(--s)*20px);
+  border-radius:calc(var(--s)*4px);background:rgba(0,0,0,.35);border:1px solid rgba(255,230,160,.5);color:#fff3cf;
+  font-weight:700;font-size:calc(var(--s)*8px);display:none;font-family:inherit}
+#pauseBtn.on{display:block}
+#rotate{display:none;position:absolute;top:0;left:0;right:0;padding:6px;background:#ffd45e;color:#3a1b05;
+  text-align:center;font-size:13px;font-weight:700}
+@media (orientation:portrait) and (pointer:coarse){#rotate{display:block}}
